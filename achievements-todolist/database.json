@@ -1,0 +1,15 @@
+{
+  "achievements" : [ {
+    "desc" : "Kill 300 Creatures",
+    "difficulty" : 4.2,
+    "game" : "Fallout 4",
+    "name" : "Animal Control",
+    "points" : 20
+  }, {
+    "desc" : "Kill 4 enemies with a single use of Junkrat's RIP-Tire in Quick or Competitive Play",
+    "game" : "Overwatch",
+    "name" : "Roadkill",
+    "points" : 15,
+    "rating" : 4.5
+  } ]
+}
