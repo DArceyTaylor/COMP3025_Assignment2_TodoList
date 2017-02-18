@@ -4,12 +4,14 @@
     "difficulty" : 4.2,
     "game" : "Fallout 4",
     "name" : "Animal Control",
-    "points" : 20
+    "points" : 20,
+    "done": false
   }, {
     "desc" : "Kill 4 enemies with a single use of Junkrat's RIP-Tire in Quick or Competitive Play",
     "game" : "Overwatch",
     "name" : "Roadkill",
     "points" : 15,
-    "rating" : 4.5
+    "rating" : 4.5,
+    "done": true
   } ]
 }

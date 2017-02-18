@@ -1,17 +1,55 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      <ion-icon name="ionic" item-left ></ion-icon>
+      Achievement Hit List
+    </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addAchievement()">
-    <ion-icon name="add"></ion-icon>
-  </button>
+      <ion-icon name="add"></ion-icon>
+      Add Achievement
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let achievement of achievements | async" (click)="showOptions(achievement.$key, achievement.title)">{{achievement.title}}</ion-item>
-  </ion-list>
+  <ion-list inset *ngFor="let achievement of achievements | async; let i = index;">
+  <ion-item-sliding (click)="switchComplete(achievement.$key, achievement.done)"> 
 
+<!-- If achievement is completed, the item will appear greyed out with a line through it -->
+      <ion-item text-wrap *ngIf="achievement.done === true">
+        <ion-label>
+          <s> {{i+1}}. {{achievement.title}} - {{achievement.game}} </s>
+        </ion-label>
+        <ion-checkbox color="positive" checked="true" disabled="true"></ion-checkbox>
+      </ion-item>
+
+<!-- If achievement isn't completed, the item will appear normally -->
+      <ion-item text-wrap *ngIf="achievement.done === false">
+        <ion-label>
+          {{i+1}}. {{achievement.title}} - {{achievement.game}}
+        </ion-label>
+        <ion-checkbox color="positive" checked="false" (click)="switchComplete(achievement.$key, achievement.done)"></ion-checkbox>
+      </ion-item>
+
+<!-- Options for Achievement slide -->
+      
+      <ion-item-options>
+        <!-- View Details -->
+        <button ion-button large color="primary" (click)="detailedAchievement(achievement.$key, achievement.title, achievement.game, achievement.description, achievement.points, achievement.difficulty)">
+          <ion-icon name="md-settings"></ion-icon>
+        </button>
+        <!-- Edit Details -->
+        <button ion-button large color="primary" (click)="updateAchievement(achievement.$key, achievement.title, achievement.game, achievement.description, achievement.points, achievement.difficulty)">
+          <ion-icon name="md-settings"></ion-icon>
+        </button>
+        <!-- Delete Achievement -->
+        <button ion-button large color="danger" (click)="removeAchievement(achievement.$key)">
+          <ion-icon name="md-close"></ion-icon>
+        </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
