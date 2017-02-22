@@ -5,7 +5,6 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
 

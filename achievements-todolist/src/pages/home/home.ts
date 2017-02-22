@@ -1,3 +1,11 @@
+/*
+Name: D'Arcey Taylor
+Student ID: 200302660
+Project: Todo List for COMP3025_W2017
+Date: 02/21/2017
+
+This is the code behind for the Todo List - adds, updates, and deletes from firebase database
+*/
 import { Component } from '@angular/core';
 
 import {
